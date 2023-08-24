@@ -1,10 +1,14 @@
 import React from 'react'
+import { useEffect } from 'react'
 import Calender from "@/components/Calender/Calender"
 
-const Book = () => {
+const Book = ({params}) => {
+  useEffect(()=>{
+    console.log(params);
+  },[params])
   return (
     <div>
-      <Calender/>
+      <Calender params={params}/>
     </div>
   )
 }
