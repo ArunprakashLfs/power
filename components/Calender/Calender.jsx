@@ -32,17 +32,18 @@ const Calender = () => {
     const times = getTime()
   return (
     <div className='grid grid-cols-2'>
-        <Calendar minDate={new Date()}
+        <div className='flex items-center justify-center'>
+            <Calendar minDate={new Date()}
       
       className="react-calendar"
       view='month'
       onClickDay={(date)=>setSelectDate(date)}
-      />
+      /></div>
         {selectDate?(
-        <div flex max-w-lg flex-wrap gap-4>
+        <div className='flex w-[5rem] flex-col gap-4'>
             {times?.map((time, i) => (
             <div className='rounded-sm bg-gray-100 p-2' key={`time-${i}`}>
-              <button onClick={() => SetSelectTime((prev) => ({ ...prev, dateTime: time }))} type='button'>
+              <button onClick={() => SetSelectTime((prev) => ({ ...prev, time }))} type='button'>
                 {format(time, 'kk:mm')}
               </button>
             </div>
